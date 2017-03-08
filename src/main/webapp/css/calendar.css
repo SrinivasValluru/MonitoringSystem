@@ -1,0 +1,113 @@
+/*@import url(http://fonts.googleapis.com/css?family=Droid+Serif);*/
+select{
+    width:80%;
+    border:3px solid rgb(200, 200, 207);
+    height:42px;
+    padding:0px;
+    border-radius:3px;
+    margin:5px 10px 20px 35px;
+}
+input[type=text]{
+    width:546.1%;
+    border:2px solid rgb(200, 200, 207);
+    height:23px;
+    padding:6px;
+    border-radius:6px;
+    margin:-13px 287px 20px -129px;
+}
+input[type=password]{
+    width:546.1%;
+    border:2px solid rgb(200, 200, 207);
+    height:23px;
+    padding:6px;
+    border-radius:6px;
+    margin:-13px 287px 20px -129px;
+}
+
+input[type=submit]{
+    width:205%;
+    color:#fff;
+    border:0px solid rgb(200, 200, 207);
+    height:38px;
+    padding:0px;
+    line-height:17px;
+    border-radius:4px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    font-size:16px;
+    margin:-10px 133px -48px -52px;
+    background-color:green;
+}
+label{
+    margin-left:35px;
+    font-family: 'Droid Serif', serif;
+}
+.container{
+    width:960px;
+    margin:50px auto;
+}
+.main{
+    float:left;
+    width:300px;
+    height:350px;
+    box-shadow:1px 1px 12px gray;
+    padding-top:30px;
+}
+h2{
+    width:370px;
+    text-align:center;
+    font-family: 'Droid Serif', serif;
+}
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+}
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    width: 100px;
+    height: 29px;
+    font-size: 15px;
+}
+.ui-datepicker-calendar span {
+    padding: 3px -5px;
+    font-size: 13px;
+}
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    height: 34px;
+    padding-top: 3px;
+}
+.ui-datepicker th {
+    padding: 5px;
+    text-align: center;
+    border: 0;
+}
+.error {
+    background: #DB6D00;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 17px;
+    min-height: 10px;
+    padding: 10px;
+    position: absolute;
+    right: -149px;
+    width: 221px;
+    border-radius: 27px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    text-decoration-line: 266px;
+    text-align: center;
+    text-indent: -1px;
+    padding-top: 123px;
+    padding-left: -267px;
+    margin-top: -14%;
+    margin-right: -13%;
+    margin-top: -14%;
+    padding: 5px !important;
+    font-family:"Trebuchet MS", cursive;
+}
+@media only screen and (min-width: 600px) {
+    .error {
+        padding: 2em 2em 0;
+    }
+}

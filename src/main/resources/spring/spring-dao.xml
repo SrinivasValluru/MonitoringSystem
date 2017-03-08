@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <bean id="finderIntroductionAdvisor" class="com.monitor.system.aop.FinderIntroductionAdvisor"/>
+
+    <bean id="abstractDaoTarget" class="com.monitor.system.dao.impl.GenericDaoImpl" abstract="true"/>
+
+    <bean id="abstractDao" class="org.springframework.aop.framework.ProxyFactoryBean" abstract="true">
+        <property name="interceptorNames">
+            <list>
+                <value>finderIntroductionAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="systemDetailsDao" parent="abstractDao">
+        <property name="proxyInterfaces" value="com.monitor.system.dao.SystemDetailsDao"/>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg value="com.monitor.system.dto.SystemDetails"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="activeIPDetailsDao" parent="abstractDao">
+        <property name="proxyInterfaces" value="com.monitor.system.dao.ActiveIPDetailsDao"/>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg value="com.monitor.system.dto.ActiveIPDetails"/>
+            </bean>
+        </property>
+    </bean>
+</beans>
